@@ -10,11 +10,9 @@ int main() {
 	
 	if((pid = fork()) < 0) {
 		perror("fork error");
-		exit(0);
 	} else if (pid == 0) {
 		if(execl("./child2.out", "child2", (char*) NULL) < 0){
 			perror("execl error");
-			exit(0);
 		}
 	}
 
